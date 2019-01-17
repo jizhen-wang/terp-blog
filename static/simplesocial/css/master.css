@@ -1,0 +1,39 @@
+.bg-semiTrans {
+  background-color: rgba(100, 100, 100, .3);
+}
+
+.logo {
+  font-style: italic;
+  font-weight: bold;
+  color: #E03a3e;
+}
+
+.bg-kale {
+  background-color: #448D76;
+  color: white;
+}
+
+.bg-kale-trans {
+  background-color: rgba(68, 141, 118, .5);
+}
+
+.bg-terps-gold {
+  background-color: #ffd520;
+}
+
+.bg-terps-red {
+  background-color: #e03a3e;
+  color: white;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.bg-faded-yellow {
+  background-color: rgba(255, 213, 32, .5);
+}

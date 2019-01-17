@@ -1,0 +1,18 @@
+<div class="card">
+	<div class="card-body">
+		<a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a><br>
+		<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+		<div class="pt-1"><strong>{{ post.message_html|safe }}</strong></div>
+		{% if post.group %}
+		<span class="group-name">in <a href="{% url 'groups:single' slug=post.group.slug %}">{{ post.group.name }}</a></span>
+		{% endif %}
+	</div>
+	<div class="card-footer">
+		{% if user.is_authenticated and post.user == user and not hide_delete %}
+		<a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple btn-sm">
+			<i class="fas fa-trash-alt"></i>
+			<span class="text-danger icon-label">Delete</span>
+		</a>
+		{% endif %}
+	</div>
+</div>

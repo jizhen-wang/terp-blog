@@ -1,0 +1,23 @@
+{% extends "posts/post_base.html" %}
+
+{% block post_content %}
+{% include "posts/_post.html" %}
+<hr>
+<a class="btn btn-primary btn-comment" href="{% url 'posts:add_comment_to_post' pk=post.pk %}">Add comment</a>
+<hr>
+{% for comment in post.comments.all %}
+<br>
+{% if user.is_authenticated %}
+<div class="card">
+    <div class="card-body">
+        {{ comment.created_date }}
+        <p>{{ comment.text|safe|linebreaks }}</p>
+        <p>Posted by: <strong>{{ comment.author }}</strong></p>
+    </div>
+</div>
+{% endif %}
+{% empty %}
+<p>No comments posted.</p>
+{% endfor %}
+
+{% endblock %}

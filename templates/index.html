@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+
+<style>
+    body {
+        background-image: url("{% static 'simplesocial/img/McKeldin.jpg'%}");
+        background-size: 100%;
+    }
+</style>
+<div class="jumbotron" style="background:none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 bg-faded-yellow jumbo-margin rounded">
+                <h1 class="text-center">Welcome to <i>TerpBlog!</i></h1>
+                <p class="ml-2">
+                    The perfect sites for you to create any group.
+                </p>
+                <ul>
+                    <li>Free to use.</li>
+                    <li>Unlimited groups creation</li>
+                    <li>Join and leave groups at any moment</li>
+                </ul>
+                <ul>
+                    <li class="standout-point">
+                        <strong>Become connected with Terps like never before.</strong>
+                    </li>
+                </ul>
+                <div class="col-12 text-center pb-3">
+                    <a href="{% url 'accounts:signup' %}" class="btn btn btn-lg text-white" style="background-color:#e03a3e">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
